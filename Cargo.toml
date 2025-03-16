@@ -1,5 +1,5 @@
 [package]
-name = "rust-seed"
+name = "listener-sender-multicast"
 # don't change this, it's updated before an actual build by update-version.sh
 version = "0.0.0-development"
 edition = "2024"
@@ -9,7 +9,7 @@ description = "Rust seed application"
 license-file = "LICENSE"
 categories = ["starter", "seed"]
 keywords = ["integrity", "seed", "starter", "docker", "release"]
-repository = "https://github.com/kristof-mattei/rust-seed"
+repository = "https://github.com/kristof-mattei/listener-sender-multicast"
 
 [lints.clippy]
 # don't stop from compiling / running
@@ -36,7 +36,10 @@ non_ascii_idents = { level = "deny", priority = 127 }
 coverage = []
 
 [dependencies]
+clap = { version = "4.5.32", features = ["derive"] }
 color-eyre = { git = "https://github.com/eyre-rs/eyre", rev = "c4ee249f7c51dc6452e8704ae8d117d90d6eeebc" }
+libc = "0.2.171"
+socket2 = "0.5.8"
 
 # OpenSSL for musl
 # [target.'cfg(all(any(target_arch="x86_64", target_arch="aarch64"), target_os="linux", target_env="musl"))'.dependencies]

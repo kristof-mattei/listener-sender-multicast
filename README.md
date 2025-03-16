@@ -1,16 +1,34 @@
-# Rust seed application
+# Simple Sender and Listener for multicast in Rust
 
-It's written in Rust!
+Ported from https://gist.github.com/hostilefork/f7cae3dc33e7416f2dd25a402857b6c6
 
-This is a framework for building Rust applications in combination with building Docker containers and never rebuilding code on release, instead we promote existing code.
+Note that the listener binds to any address, and then joins the multicast group. This could be narrowed down to bind to the multicast group to filter out unicast traffic.
 
-## TODO and done
+## Source Specific Multicast
 
-- [x] Figure out how to deal with PRs pushing too many Docker containers<br />
-    > We only build containers on the tip of the PR, so even if you're pushing 10 commits, we'll only build one.
-- [ ] Remove old containers when the new one gets build for a PR?<br />
-      Or rely on a general weekly untagged cleanup?
-- [ ] Remove PR containers when PR closed<br />
-    > API currently unavailable
-- [x] How do we deal with older containers on `main`?<br />
-    > We move tags, so we'll need to wait for the API to clean up untagged versions
+To enable multicast with [Source Specific Multicast](https://en.wikipedia.org/wiki/Source-specific_multicast) modifications are required.
+
+Note that this only applies when you use IGMPv3 AND your source is in the `232.0.0.0/8` range.
+
+You need to do something like this in the listener (search for "`check the readme for SSM instructions`"):
+
+```rust
+fd.join_ssm_v4(
+    &Ipv4Addr::new(172, 22, 92, 103),
+    &cli.group,
+    &Ipv4Addr::UNSPECIFIED,
+)
+.with_note(|| "setsockopt")?;
+```
+
+Credits: https://gist.github.com/hostilefork/f7cae3dc33e7416f2dd25a402857b6c6?permalink_comment_id=5065303#gistcomment-5065303
+
+or force igmpv2:
+
+<!-- prettier-ignore-start -->
+```bash
+echo "2" > /proc/sys/net/ipv4/conf/<your_interface>/force_igmp_version
+```
+<!-- prettier-ignore-end -->
+
+Credits: https://gist.github.com/hostilefork/f7cae3dc33e7416f2dd25a402857b6c6?permalink_comment_id=5124051#gistcomment-5124051
