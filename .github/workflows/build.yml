@@ -84,7 +84,7 @@ jobs:
           fetch-depth: 0
 
       - name: Cache dependencies
-        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         env:
           CACHE_NAME: cargo-cache-dependencies
         with:
@@ -97,7 +97,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.CACHE_NAME }}-
 
       - name: Set up mold
-        uses: rui314/setup-mold@f80524ca6eeaa76759b57fb78ddce5d87a20c720 # v1
+        uses: rui314/setup-mold@e16410e7f8d9e167b74ad5697a9089a35126eb50 # v1
 
       - name: Set up toolchain
         shell: bash
@@ -166,7 +166,7 @@ jobs:
           show-progress: false
 
       - name: Cache dependencies
-        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         env:
           CACHE_NAME: cargo-cache-dependencies
         with:
@@ -179,7 +179,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.CACHE_NAME }}-
 
       - name: Set up mold
-        uses: rui314/setup-mold@f80524ca6eeaa76759b57fb78ddce5d87a20c720 # v1
+        uses: rui314/setup-mold@e16410e7f8d9e167b74ad5697a9089a35126eb50 # v1
 
       - name: Set up toolchain
         shell: bash
@@ -215,7 +215,7 @@ jobs:
           show-progress: false
 
       - name: Cache dependencies
-        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         env:
           CACHE_NAME: cargo-cache-dependencies
         with:
@@ -228,7 +228,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.CACHE_NAME }}-
 
       - name: Set up mold
-        uses: rui314/setup-mold@f80524ca6eeaa76759b57fb78ddce5d87a20c720 # v1
+        uses: rui314/setup-mold@e16410e7f8d9e167b74ad5697a9089a35126eb50 # v1
 
       - name: Set up toolchain
         shell: bash
@@ -267,7 +267,7 @@ jobs:
           show-progress: false
 
       - name: Cache dependencies
-        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         env:
           CACHE_NAME: cargo-cache-dependencies
         with:
@@ -280,7 +280,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.CACHE_NAME }}-
 
       - name: Set up mold
-        uses: rui314/setup-mold@f80524ca6eeaa76759b57fb78ddce5d87a20c720 # v1
+        uses: rui314/setup-mold@e16410e7f8d9e167b74ad5697a9089a35126eb50 # v1
 
       - name: Set up toolchain
         shell: bash
@@ -345,7 +345,7 @@ jobs:
         continue-on-error: true
 
       - name: Upload test results
-        uses: EnricoMi/publish-unit-test-result-action@170bf24d20d201b842d7a52403b73ed297e6645b # v2.18.0
+        uses: EnricoMi/publish-unit-test-result-action@afb2984f4d89672b2f9d9c13ae23d53779671984 # v2.19.0
         with:
           check_name: Test results
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -357,7 +357,7 @@ jobs:
           grcov $(find profiling -name "profile-*.profraw" -print) --source-dir . --binary-path ./target/debug/ --output-type lcov --branch --ignore-not-existing --llvm --keep-only "src/**" --keep-only "tests/**" --output-path ./reports/lcov.info
 
       - name: Upload coverage results (to Codecov.io)
-        uses: codecov/codecov-action@0565863a31f2c772f9f0395002a31e3f06189574 # v5.4.0
+        uses: codecov/codecov-action@ad3126e916f78f00edff4ed0317cf185271ccc2d # v5.4.2
         with:
           disable_search: true
           fail_ci_if_error: true
@@ -400,7 +400,7 @@ jobs:
           show-progress: false
 
       - name: Cache dependencies
-        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         env:
           CACHE_NAME: cargo-cache-dependencies
         with:
@@ -413,7 +413,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.CACHE_NAME }}-
 
       - name: Set up mold
-        uses: rui314/setup-mold@f80524ca6eeaa76759b57fb78ddce5d87a20c720 # v1
+        uses: rui314/setup-mold@e16410e7f8d9e167b74ad5697a9089a35126eb50 # v1
 
       - name: Set up toolchain
         shell: bash
@@ -452,7 +452,7 @@ jobs:
           show-progress: false
 
       - name: Cache dependencies
-        uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
+        uses: actions/cache@5a3ec84eff668545956fd18022155c47e93e2684 # v4.2.3
         env:
           CACHE_NAME: cargo-cache-dependencies
         with:
@@ -465,7 +465,7 @@ jobs:
             ${{ runner.os }}-build-${{ env.CACHE_NAME }}-
 
       - name: Set up mold
-        uses: rui314/setup-mold@f80524ca6eeaa76759b57fb78ddce5d87a20c720 # v1
+        uses: rui314/setup-mold@e16410e7f8d9e167b74ad5697a9089a35126eb50 # v1
 
       - name: Set up toolchain
         shell: bash
@@ -562,7 +562,7 @@ jobs:
           outputs: type=oci,dest=/tmp/${{ env.UNIQUE_TAG }}.tar
 
       - name: Upload artifact
-        uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: container-${{ env.APPLICATION_NAME }}
           path: /tmp/${{ env.UNIQUE_TAG }}.tar
@@ -626,7 +626,7 @@ jobs:
             type=raw,value=${{ env.UNIQUE_TAG }}
 
       - name: Download artifact
-        uses: actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806 # v4.1.9
+        uses: actions/download-artifact@95815c38cf2ff2164869cbab79da8d1f422bc89e # v4.2.1
         id: artifact
         with:
           path: /tmp/container/
