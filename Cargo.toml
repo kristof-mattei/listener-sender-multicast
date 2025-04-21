@@ -42,7 +42,7 @@ coverage = []
 clap = { version = "4.5.32", features = ["derive"] }
 color-eyre = { git = "https://github.com/eyre-rs/eyre", rev = "c4ee249f7c51dc6452e8704ae8d117d90d6eeebc" }
 libc = "0.2.171"
-socket2 = "0.5.8"
+socket2 = "0.5.9"
 
 # OpenSSL for musl
 # [target.'cfg(all(any(target_arch="x86_64", target_arch="aarch64"), target_os="linux", target_env="musl"))'.dependencies]
