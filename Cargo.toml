@@ -43,4 +43,4 @@ non_ascii_idents = { level = "deny", priority = 127 }
 clap = { version = "4.5.38", features = ["derive"] }
 color-eyre = "0.6.4"
 libc = "0.2.172"
-socket2 = "0.5.9"
+socket2 = "0.5.10"
