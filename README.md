@@ -32,3 +32,9 @@ echo "2" > /proc/sys/net/ipv4/conf/<your_interface>/force_igmp_version
 <!-- prettier-ignore-end -->
 
 Credits: https://gist.github.com/hostilefork/f7cae3dc33e7416f2dd25a402857b6c6?permalink_comment_id=5124051#gistcomment-5124051
+
+## License
+
+MIT, see [LICENSE](./LICENSE)
+
+`SPDX-License-Identifier: MIT`
