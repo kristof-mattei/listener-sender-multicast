@@ -24,6 +24,7 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  RUSTC_BOOTSTRAP: "1"
   RUSTFLAGS: --deny=warnings
 
 jobs:
