@@ -17,9 +17,9 @@ use std::net::SocketAddrV4;
 use std::thread;
 use std::time::{Duration, SystemTime};
 
-use clap::Parser;
+use clap::Parser as _ ;
 use clap::error::ContextKind;
-use color_eyre::{Section, eyre};
+use color_eyre::{Section as _ , eyre};
 use listener_sender_multicast::Cli;
 use socket2::{Domain, Socket, Type};
 

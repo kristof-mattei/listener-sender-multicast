@@ -15,9 +15,9 @@ use std::net::{Ipv4Addr, SocketAddrV4};
 
 const MSGBUFSIZE: usize = 256;
 
-use clap::Parser;
+use clap::Parser as _;
 use clap::error::ContextKind;
-use color_eyre::{Section, eyre};
+use color_eyre::{Section as _, eyre};
 use listener_sender_multicast::Cli;
 use socket2::{Domain, Socket, Type};
 
@@ -68,6 +68,8 @@ fn main() -> Result<(), eyre::Error> {
 
         buffer[null_pos].write(b'\0');
 
+        // SAFETY: `Socket::recv_from` promises not to write any uninitialized bytes.
+        // SAFETY: And we wrote the final `\0`, meaning we can include that last byte (`=null_pos`).
         let initialized_part = unsafe { &*((&raw const buffer[..=null_pos]) as *const [u8]) };
 
         let message = CStr::from_bytes_until_nul(initialized_part)?.to_str()?;
