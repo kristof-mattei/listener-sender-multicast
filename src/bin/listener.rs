@@ -1,4 +1,3 @@
-#![feature(maybe_uninit_slice)]
 //
 // Simple listener.c program for UDP multicast
 //
@@ -70,8 +69,12 @@ fn main() -> Result<(), eyre::Error> {
         buffer[null_pos].write(b'\0');
 
         // SAFETY: `Socket::recv_from` promises not to write any uninitialized bytes.
-        // SAFETY: And we wrote the final `\0`, meaning we can include that last byte (`=null_pos`).
-        let initialized_part = unsafe { buffer[..=null_pos].assume_init_ref() };
+        // And we wrote the final `\0`, meaning we can include that last byte (`=null_pos`).
+        #[expect(
+            clippy::as_conversions,
+            reason = "For the range, we know all `u8`s are initialized"
+        )]
+        let initialized_part = unsafe { &*((&raw const buffer[..=null_pos]) as *const [u8]) };
 
         let message = CStr::from_bytes_until_nul(initialized_part)?.to_str()?;
 
