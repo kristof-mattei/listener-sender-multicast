@@ -14,7 +14,6 @@ include = ["src/**", "/LICENSE", "/LICENSE-*"]
 [dependencies]
 clap = { version = "4.5.48", features = ["derive"] }
 color-eyre = "0.6.5"
-libc = "0.2.176"
 socket2 = "0.6.0"
 
 [lints.clippy]
