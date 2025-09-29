@@ -213,7 +213,6 @@ version = "0.0.0-development"
 dependencies = [
  "clap",
  "color-eyre",
- "libc",
  "socket2",
 ]
 
