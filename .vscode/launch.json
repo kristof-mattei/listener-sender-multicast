@@ -5,22 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "lldb",
-            "request": "launch",
             "name": "Debug executable 'listener-sender-multicast'",
+            "type": "lldb",
+            "request": "launch",
             "cargo": {
-                "args": [
-                    "build",
-                    "--bin=listener-sender-multicast",
-                    "--package=listener-sender-multicast"
-                ],
-                "filter": {
-                    "name": "listener-sender-multicast",
-                    "kind": "bin"
-                }
+                "args": ["run", "--bin=listener-sender-multicast"]
             },
             "args": [],
-            "cwd": "${workspaceFolder}",
             "env": {
                 "RUST_BACKTRACE": "1",
                 "RUST_LOG": "DEBUG,listener_sender_multicast=TRACE"
@@ -29,23 +20,12 @@
             "terminal": "integrated"
         },
         {
-            "type": "lldb",
-            "request": "launch",
             "name": "Debug unit tests in executable 'listener-sender-multicast'",
+            "type": "lldb",
+            "request": "launch",
             "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=listener-sender-multicast",
-                    "--package=listener-sender-multicast"
-                ],
-                "filter": {
-                    "name": "listener-sender-multicast",
-                    "kind": "bin"
-                }
+                "args": ["test", "--bin=listener-sender-multicast"]
             },
-            "args": [],
-            "cwd": "${workspaceFolder}",
             "env": {
                 "RUST_BACKTRACE": "1",
                 "RUST_LOG": "DEBUG,listener_sender_multicast=TRACE"
@@ -54,23 +34,12 @@
             "terminal": "integrated"
         },
         {
+            "name": "Debug integration test 'integration_tests'",
             "type": "lldb",
             "request": "launch",
-            "name": "Debug integration test 'integration_tests'",
             "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--test=integration_tests",
-                    "--package=listener-sender-multicast"
-                ],
-                "filter": {
-                    "name": "integration_tests",
-                    "kind": "test"
-                }
+                "args": ["test", "--test=integration_tests"]
             },
-            "args": [],
-            "cwd": "${workspaceFolder}",
             "env": {
                 "RUST_BACKTRACE": "1",
                 "RUST_LOG": "DEBUG,listener_sender_multicast=TRACE"
