@@ -16,6 +16,9 @@ clap = { version = "4.5.54", features = ["derive"] }
 color-eyre = "0.6.5"
 socket2 = "0.6.1"
 
+[package.metadata.spellcheck]
+config = "spellcheck.toml"
+
 [lints.clippy]
 # don't stop from compiling / running
 all = "warn"

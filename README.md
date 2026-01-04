@@ -1,6 +1,6 @@
 # Simple Sender and Listener for multicast in Rust
 
-Ported from https://gist.github.com/hostilefork/f7cae3dc33e7416f2dd25a402857b6c6
+Ported from <https://gist.github.com/hostilefork/f7cae3dc33e7416f2dd25a402857b6c6>
 
 Note that the listener binds to any address, and then joins the multicast group. This could be narrowed down to bind to the multicast group to filter out unicast traffic.
 
@@ -23,7 +23,7 @@ fd.join_ssm_v4(
 
 Credits: https://gist.github.com/hostilefork/f7cae3dc33e7416f2dd25a402857b6c6?permalink_comment_id=5065303#gistcomment-5065303
 
-or force igmpv2:
+or force IGMPv2:
 
 <!-- prettier-ignore-start -->
 ```bash
