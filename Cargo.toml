@@ -14,7 +14,7 @@ include = ["src/**", "/LICENSE", "/LICENSE-*"]
 [dependencies]
 clap = { version = "4.5.54", features = ["derive"] }
 color-eyre = "0.6.5"
-socket2 = "0.6.1"
+socket2 = "0.6.2"
 
 [package.metadata.spellcheck]
 config = "spellcheck.toml"
