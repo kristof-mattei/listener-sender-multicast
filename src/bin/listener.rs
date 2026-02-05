@@ -47,8 +47,8 @@ fn main() -> Result<(), eyre::Error> {
     // IP address differs from sender
     let addr = SocketAddrV4::new(Ipv4Addr::UNSPECIFIED, cli.port.into());
 
-    if let Err(err) = fd.bind(&addr.into()) {
-        Err(err).with_note(|| "bind")?;
+    if let Err(error) = fd.bind(&addr.into()) {
+        Err(error).with_note(|| "bind")?;
     }
 
     // check the readme for SSM instructions
