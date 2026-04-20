@@ -16,6 +16,9 @@ clap = { version = "4.6.1", features = ["derive"] }
 color-eyre = "0.6.5"
 socket2 = "0.6.3"
 
+[dev-dependencies]
+pretty_assertions = "=1.4.1"
+
 [package.metadata.spellcheck]
 config = "spellcheck.toml"
 
@@ -246,6 +249,3 @@ uninlined_format_args = { level = "allow", priority = 127 }
 [lints.rust]
 let_underscore_drop = { level = "deny", priority = 127 }
 non_ascii_idents = { level = "deny", priority = 127 }
-
-[dev-dependencies]
-pretty_assertions = "=1.4.1"
