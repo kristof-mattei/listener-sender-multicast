@@ -70,7 +70,7 @@ fn main() -> Result<(), eyre::Error> {
 
         // SAFETY: `Socket::recv_from` promises not to write any uninitialized bytes.
         // And we wrote the final `\0`, meaning we can include that last byte (`=null_pos`).
-        let initialized_part = unsafe { &*((&raw const buffer[..=null_pos]) as *const [u8]) };
+        let initialized_part = unsafe { buffer[..=null_pos].assume_init_ref() };
 
         let message = CStr::from_bytes_until_nul(initialized_part)?.to_str()?;
 
