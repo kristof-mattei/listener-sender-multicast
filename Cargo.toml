@@ -19,9 +19,6 @@ socket2 = "=0.6.5"
 [dev-dependencies]
 pretty_assertions = "=1.4.1"
 
-[package.metadata.spellcheck]
-config = "spellcheck.toml"
-
 [lints.clippy]
 # don't stop from compiling / running
 all = "warn"
