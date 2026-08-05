@@ -3,9 +3,10 @@ appgroup
 appuser
 bkeepers
 buildcache
-Cinstrument
+cinstrument
 cocogitto
-Ctarget
+ctarget
+cttc
 cves
 DGRAM
 dorny
@@ -19,6 +20,7 @@ igmp
 kristof
 lldb
 mattei
+mimalloc
 monomorphization
 MSGBUFSIZE
 multiplatform
@@ -30,9 +32,10 @@ pathbuf
 postprocessors
 prereleased
 profraw
+pyflakes
 recvfrom
-Retag
-Retagging
+retag
+retagging
 rustflags
 samply
 sccache
@@ -44,9 +47,9 @@ startswith
 striptags
 Strs
 taiki
-TARGETPLATFORMDASH
+targetplatformdash
 telem
-Tera
+tera
 topo
 trixie
 Uninit
