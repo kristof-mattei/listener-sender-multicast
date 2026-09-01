@@ -1,4 +1,3 @@
-adduser
 appgroup
 appuser
 artipacked
@@ -34,6 +33,7 @@ pyflakes
 recvfrom
 retag
 retagging
+rhysd
 rustflags
 samply
 sccache
