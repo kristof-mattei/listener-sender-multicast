@@ -24,7 +24,6 @@ multiplatform
 mypy
 netcat
 nextest
-nvmrc
 pathbuf
 postprocessors
 prereleased
