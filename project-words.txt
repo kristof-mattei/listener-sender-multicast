@@ -4,6 +4,7 @@ artipacked
 bkeepers
 buildcache
 cinstrument
+cliffignore
 ctarget
 cves
 dgram
@@ -16,12 +17,10 @@ hubot
 idents
 igmp
 kristof
-lldb
 mattei
 monomorphization
 msgbufsize
 multiplatform
-mypy
 netcat
 nextest
 pathbuf
@@ -29,6 +28,7 @@ postprocessors
 prereleased
 profraw
 pyflakes
+rawfile
 recvfrom
 retag
 retagging
@@ -40,6 +40,7 @@ sendto
 setsockopt
 skopeo
 skopeo's
+slurpfile
 ssdp
 startswith
 striptags
