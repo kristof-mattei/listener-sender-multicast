@@ -23,6 +23,7 @@ msgbufsize
 multiplatform
 netcat
 nextest
+oras
 pathbuf
 postprocessors
 prereleased
