@@ -17,6 +17,7 @@ hubot
 idents
 igmp
 kristof
+lintian
 mattei
 monomorphization
 msgbufsize
