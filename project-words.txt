@@ -7,7 +7,6 @@ buildcache
 cinstrument
 cliffignore
 ctarget
-cves
 dgram
 dorny
 endfor
@@ -29,7 +28,6 @@ oras
 pathbuf
 pkgs
 postprocessors
-prereleased
 profraw
 pyflakes
 rawfile
